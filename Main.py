@@ -1,6 +1,6 @@
 #USE THIS VIDEO AS A GUIDE IF YOU GET STUCK!! https://www.youtube.com/watch?v=3FpqXyJsd1s
 #GO TO reddit.com/prefs/apps to get your client id and client secret.
-
+#SET REDIRECT URL TO http://localhost
 
 import praw
 import time
@@ -21,6 +21,17 @@ def bot_login():
 
 def run_bot(r, comments_replied_to):
     #Bot shilling responses
+
+    #Adds a dogebonk meme at the end of each reply, to add new memes format the response as shown below
+    meme_linkers = [
+        "[BONK!!!](https://imgur.com/a/3RZr2OU)",
+        "[BONK!!!](https://imgur.com/a/PJ5OAFy)",
+        "[BONK!!!](https://imgur.com/a/y9jq5xy)",
+        "[BONK!!!](https://imgur.com/a/BOSBdQk)",
+        "[BONK!!!](https://imgur.com/a/ra6T0Gj)",
+        "[BONK!!!](https://imgur.com/a/7xHO16H)",
+
+    ]
     horny_responses = [
         "Get Bonked!",
         "Bonk!",
@@ -43,7 +54,8 @@ def run_bot(r, comments_replied_to):
             if keyword in comment_lower and comment.id not in comments_replied_to and comment.author != r.user.me():
                 print("String with KEYWORD found in comment " + comment.id)
                 random_index = random.randint(0, len(horny_responses) -1)
-                comment.reply(horny_responses[random_index] + "     -This comment was automatically typed by a dog!")
+                random_index2 = random.randint(0, len(meme_linkers) -1)
+                comment.reply(horny_responses[random_index] + "     -This comment was automatically typed by a dog! " + meme_linkers[random_index2])
                 print("Replied to comment " + comment.id)
                 comments_replied_to.append(comment.id)
                 #Prevents the bot from replying to itself and the same comments over and over again.
@@ -54,7 +66,8 @@ def run_bot(r, comments_replied_to):
             comment_lower = comment.body.lower()
             if shillKeyWord in comment_lower and comment.id not in comments_replied_to and comment.author != r.user.me():
                 print("String with SHILLKEYWORD found in comment " + comment.id)
-                comment.reply(buying_Dogebonk[0] + " -This comment was automatically typed by a dog!")
+                random_index2 = random.randint(0, len(meme_linkers) - 1)
+                comment.reply(buying_Dogebonk[0] + " -This comment was automatically typed by a dog! " + meme_linkers[random_index2])
                 print("Replied to comment " + comment.id)
                 comments_replied_to.append(comment.id)
                 with open("comments_replied_to.txt", "a") as f:
@@ -70,7 +83,7 @@ def run_bot(r, comments_replied_to):
         "BEHAVE!",
     ]
     buying_Dogebonk2 = [
-        "DogeBonk is an upward rug, AVOID! DogeBonk contract 0xae2df9f730c54400934c06a17462c41c08a06ed8"
+        "DogeBonk goes up in value too fast, AVOID! DogeBonk contract 0xae2df9f730c54400934c06a17462c41c08a06ed8"
     ]
     keywords2 = ["horny", " horny ", "Horny", " horny ", "sex", " sex ", "cumming", " cumming ", " sexy ", "sexy"]
     shillKeyWords2 = [" dogebonk ", "dogebonk", " how to buy dogebonk", " buying dogebonk ",
@@ -84,7 +97,7 @@ def run_bot(r, comments_replied_to):
             if keyword in comment_lower and comment.id not in comments_replied_to and comment.author != r.user.me():
                 print("String with KEYWORD2 found in comment " + comment.id)
                 random_index = random.randint(0, len(horny_responses) -1)
-                comment.reply(horny_responses2[random_index] + "     -This comment was automatically typed by a dog!")
+                comment.reply(horny_responses2[random_index] + "     -This comment was automatically typed by a dog! " + meme_linkers[random_index2])
                 print("Replied to comment " + comment.id)
                 comments_replied_to.append(comment.id)
                 with open("comments_replied_to.txt", "a") as f:
@@ -94,7 +107,7 @@ def run_bot(r, comments_replied_to):
             comment_lower = comment.body.lower()
             if shillKeyWord in comment_lower and comment.id not in comments_replied_to and comment.author != r.user.me():
                 print("String with SHILLKEYWORD2 found in comment " + comment.id)
-                comment.reply(buying_Dogebonk2[0] + " -This comment was automatically typed by a dog!")
+                comment.reply(buying_Dogebonk2[0] + " -This comment was automatically typed by a dog! " + meme_linkers[random_index2])
                 print("Replied to comment " + comment.id)
                 comments_replied_to.append(comment.id)
                 with open("comments_replied_to.txt", "a") as f:
@@ -110,7 +123,7 @@ def run_bot(r, comments_replied_to):
             if keyword in comment_lower and comment.id not in comments_replied_to and comment.author != r.user.me():
                 print("String with KEYWORD3 found in comment " + comment.id)
                 random_index = random.randint(0, len(horny_responses) - 1)
-                comment.reply(horny_responses2[random_index] + "     -This comment was automatically typed by a dog!")
+                comment.reply(horny_responses2[random_index] + "     -This comment was automatically typed by a dog! " + meme_linkers[random_index2])
                 print("Replied to comment " + comment.id)
                 comments_replied_to.append(comment.id)
                 with open("comments_replied_to.txt", "a") as f:
@@ -120,7 +133,7 @@ def run_bot(r, comments_replied_to):
             comment_lower = comment.body.lower()
             if shillKeyWord in comment_lower and comment.id not in comments_replied_to and comment.author != r.user.me():
                 print("String with SHILLKEYWOR3 found in comment " + comment.id)
-                comment.reply(buying_Dogebonk2[0] + " -This comment was automatically typed by a dog!")
+                comment.reply(buying_Dogebonk2[0] + " -This comment was automatically typed by a dog! " + meme_linkers[random_index2])
                 print("Replied to comment " + comment.id)
                 comments_replied_to.append(comment.id)
                 with open("comments_replied_to.txt", "a") as f:
@@ -135,7 +148,7 @@ def run_bot(r, comments_replied_to):
     # Sleep for 10 seconds...
     time.sleep(10)
 
-"ShibArmy"
+
 def get_saved_comments():
     if not os.path.isfile("comments_replied_to.txt"):
         comments_replied_to = []
