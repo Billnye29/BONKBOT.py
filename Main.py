@@ -97,6 +97,7 @@ def run_bot(r, comments_replied_to):
             if keyword in comment_lower and comment.id not in comments_replied_to and comment.author != r.user.me():
                 print("String with KEYWORD2 found in comment " + comment.id)
                 random_index = random.randint(0, len(horny_responses) -1)
+                random_index2 = random.randint(0, len(meme_linkers) - 1)
                 comment.reply(horny_responses2[random_index] + "     -This comment was automatically typed by a dog! " + meme_linkers[random_index2])
                 print("Replied to comment " + comment.id)
                 comments_replied_to.append(comment.id)
@@ -107,6 +108,7 @@ def run_bot(r, comments_replied_to):
             comment_lower = comment.body.lower()
             if shillKeyWord in comment_lower and comment.id not in comments_replied_to and comment.author != r.user.me():
                 print("String with SHILLKEYWORD2 found in comment " + comment.id)
+                random_index2 = random.randint(0, len(meme_linkers) - 1)
                 comment.reply(buying_Dogebonk2[0] + " -This comment was automatically typed by a dog! " + meme_linkers[random_index2])
                 print("Replied to comment " + comment.id)
                 comments_replied_to.append(comment.id)
@@ -123,6 +125,7 @@ def run_bot(r, comments_replied_to):
             if keyword in comment_lower and comment.id not in comments_replied_to and comment.author != r.user.me():
                 print("String with KEYWORD3 found in comment " + comment.id)
                 random_index = random.randint(0, len(horny_responses) - 1)
+                random_index2 = random.randint(0, len(meme_linkers) - 1)
                 comment.reply(horny_responses2[random_index] + "     -This comment was automatically typed by a dog! " + meme_linkers[random_index2])
                 print("Replied to comment " + comment.id)
                 comments_replied_to.append(comment.id)
@@ -133,6 +136,7 @@ def run_bot(r, comments_replied_to):
             comment_lower = comment.body.lower()
             if shillKeyWord in comment_lower and comment.id not in comments_replied_to and comment.author != r.user.me():
                 print("String with SHILLKEYWOR3 found in comment " + comment.id)
+                random_index2 = random.randint(0, len(meme_linkers) - 1)
                 comment.reply(buying_Dogebonk2[0] + " -This comment was automatically typed by a dog! " + meme_linkers[random_index2])
                 print("Replied to comment " + comment.id)
                 comments_replied_to.append(comment.id)
@@ -169,3 +173,4 @@ print(comments_replied_to)
 
 while True:
     run_bot(r, comments_replied_to)
+
